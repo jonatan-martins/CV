@@ -1,0 +1,247 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+.flyer-container{
+    width: 100%;
+    overflow: hidden;
+}
+
+.flyer{
+    width: 300%;
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+.flyer p {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    animation: move 10s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Sidebar */
+aside {
+    background: #6b6b6b;
+    color: #fff;
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+}
+
+.nombre-profesion-movil{
+    padding-right: 20px;
+    padding-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+.nombre-profesion-movil h1{
+    font-size: 40px;
+}
+
+.nombre-profesion-movil h2{
+    color: white;
+    border: none;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+aside h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+aside p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+article{
+    margin-bottom: 20px;
+}
+
+article h2{
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+}
+
+#checkbox-contacto,
+#checkbox-habilidades,
+#checkbox-idiomas{
+    display: none;
+}
+
+.lista-contacto, 
+.lista-habilidades, 
+.lista-idiomas {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-contacto li,
+.lista-habilidades li,
+.lista-idiomas li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Contenido Main */
+.contenido-main {
+    width: 70%;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.nombre-profesion-ordenador{
+    padding-right: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.nombre-profesion-ordenador h1{
+    font-size: 40px;
+}
+
+.nombre-profesion-ordenador h2{
+    border: none;
+}
+
+section p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Habilidades e idiomas */
+.lista-habilidades, .lista-idiomas {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.lista-habilidades span, .lista-idiomas span {
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        margin: 0 auto;
+        border-radius: 0;
+        display: grid;
+    }
+
+    .flyer{
+        font-size: 15px;
+    }
+
+    #nombre-img{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .profile-img{
+        width: 80px;
+        height: 80px;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    article{
+        height: 35px;
+        overflow: hidden;
+        transition: height .5s;
+        interpolate-size: allow-keywords;
+    }
+
+    .contenido-main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .nombre-profesion-ordenador{
+        display: none;
+    }
+
+    .nombre-profesion-movil{
+        display: block;
+    }
+
+    .nombre-profesion-movil h1{
+        font-size: 20px;
+    }
+
+    .nombre-profesion-movil h2{
+        font-size: 12px;
+    }
+
+    #checkbox-contacto:checked + #article-contacto,
+    #checkbox-habilidades:checked + #article-habilidades,
+    #checkbox-idiomas:checked + #article-idiomas {
+        height: auto;
+    }
+}
