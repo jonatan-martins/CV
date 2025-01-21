@@ -2,11 +2,11 @@ fetch('./data.json')
     .then(response => response.json())
     .then(data => {
         // Relleno la sección "Sobre mí"
-        const sobreMiSection = document.querySelector('.contenido-main section:nth-child(1)');
+        const sobreMiSection = document.querySelector('#sobre-mi');
         sobreMiSection.innerHTML = `<h2>Sobre mí</h2><p>${data.sobreMi.descripcion}</p>`;
 
         // Relleno la sección "Formación"
-        const formacionSection = document.querySelector('.contenido-main section:nth-child(2)');
+        const formacionSection = document.querySelector('#formacion');
         let formacionHTML = '<h2>Formación</h2>';
         data.formacion.forEach(item => {
             formacionHTML += `
@@ -17,7 +17,7 @@ fetch('./data.json')
         formacionSection.innerHTML = formacionHTML;
 
         // Relleno la sección "Experiencia"
-        const experienciaSection = document.querySelector('.contenido-main section:nth-child(3)');
+        const experienciaSection = document.querySelector('#experiencia');
         let experienciaHTML = '<h2>Experiencia</h2>';
         data.experiencia.forEach(item => {
             experienciaHTML += `
